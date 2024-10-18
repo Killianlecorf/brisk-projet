@@ -12,7 +12,6 @@
   "license": "ISC",
   "dependencies": {
     "brisk": "file:..",
-    "cors": "^2.8.5",
     "mongoose": "^8.7.2"
   },
   "devDependencies": {

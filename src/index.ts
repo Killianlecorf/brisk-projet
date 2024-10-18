@@ -4,7 +4,6 @@ import { CustomRequest } from "../../libs/Request";
 import { CustomResponse } from "../../libs/Response";
 import { connectToDatabase } from "../src/database/db";
 import { User } from "./models/user.model";
-import cors from 'cors';
 
 const brisk = new Brisk();
 
@@ -60,8 +59,6 @@ brisk.get('/users', async (req: CustomRequest, res: CustomResponse) => {
   
   brisk.delete('/delete/:id', async (req: CustomRequest, res: CustomResponse) => {
     const userId = req.params.id;
-
-    console.log("Attempting to delete user with ID:", userId);
 
     try {
         const deletedUser = await User.findByIdAndDelete(userId);
