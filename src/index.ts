@@ -19,6 +19,23 @@ brisk.get('/users', async (req: CustomRequest, res: CustomResponse) => {
     }
   });
 
+  brisk.get('/users/:id', async (req: CustomRequest, res: CustomResponse) => {
+    const { id } = req.params;
+
+    try {
+        const user = await User.findById(id);
+
+        if (!user) {
+            return res.status(404).json({ error: 'User not found' });
+        }
+
+        return res.status(200).json(user);
+    } catch (error) {
+        console.error('Error fetching user:', error);
+        return res.status(500).json({ error: 'Error fetching user' });
+    }
+});
+
 
   brisk.post('/users', async (req: CustomRequest, res: CustomResponse) => {
     const { name, email } = req.body;
@@ -43,26 +60,30 @@ brisk.get('/users', async (req: CustomRequest, res: CustomResponse) => {
   
   brisk.delete('/delete/:id', async (req: CustomRequest, res: CustomResponse) => {
     const userId = req.params.id;
-  
+
+    console.log("Attempting to delete user with ID:", userId);
+
     try {
-      const deletedUser = await User.findByIdAndDelete(userId);
-      if (!deletedUser) {
-        return res.status(404).json({ error: 'User not found' });
-      }
-      return res.status(204).send({});
+        const deletedUser = await User.findByIdAndDelete(userId);
+        if (!deletedUser) {
+            return res.status(404).json({ error: 'User not found' });
+        }
+        return res.status(204).send({});
     } catch (error) {
-      return res.status(500).json({ error: 'Error deleting user' });
+        console.error('Error deleting user:', error);
+        return res.status(500).json({ error: 'Error deleting user' });
     }
   });
-  
+
+
   brisk.put('/users/:id', async (req: CustomRequest, res: CustomResponse) => {
     const userId = req.params.id;
-    const { name, email } = req.body;
+    const { username, email } = req.body;
   
     try {
       const updatedUser = await User.findByIdAndUpdate(
         userId,
-        { name, email },
+        { username, email },
         { new: true, runValidators: true }
       );
       if (!updatedUser) {
