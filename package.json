@@ -4,17 +4,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node dist/projet/src/index.js",
+    "start": "node dist/Brisk-projet/src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "brisk": "file:..",
+    "brisk": "file:../Brisk",
     "mongoose": "^8.7.2"
   },
   "devDependencies": {
+    "@types/node": "^22.7.8",
     "typescript": "^5.6.3"
   }
 }

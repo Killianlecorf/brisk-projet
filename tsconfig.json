@@ -6,7 +6,16 @@
       "strict": true,
       "esModuleInterop": true,
       "skipLibCheck": true,
-      "forceConsistentCasingInFileNames": true
+      "forceConsistentCasingInFileNames": true,
+      "baseUrl": ".",
+      "paths": {
+        "@app/*": ["src/*"],
+        "@models/*": ["src/models/*"],
+        "@brisk/*": ["node_modules/*"],
+        "@db/*": ["src/database/*"],
+        "@controller/*": ["src/controllers/*"],
+        "@route/*": ["src/Routes/*"],
+      }
     },
     "include": ["src/**/*"],
     "exclude": ["node_modules", "dist"]
