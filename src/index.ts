@@ -1,6 +1,7 @@
-import { Brisk, bodyParser, cors} from '@brisk/Brisk'; 
-import { connectToDatabase } from "@db/db";
-import userRoutes from "@route/User.Routes";
+import { Brisk, bodyParser, cors} from 'brisk'; 
+import { connectToDatabase } from "@/database/db";
+import userRoutes from "@/Routes/User.Routes";
+import "./configs/aliases";
 
 const brisk = new Brisk();
 

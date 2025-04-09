@@ -1,12 +1,11 @@
-import { Brisk } from '@brisk/Brisk'; 
-import { Router } from '@brisk/Brisk/libs/Router/Router'; 
+import { Brisk, Router } from 'brisk'; 
 import {
     getAllUser, 
     getUserById, 
     addUser, 
     editUser, 
     removeUser
-} from "@controller/User.controller";
+} from "@/controllers/User.controller";
 
 const brisk = new Brisk();
 

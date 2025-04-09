@@ -4,18 +4,22 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node dist/Brisk-projet/src/index.js",
+    "start": "node dist/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc"
+    "build": "tsc && tsc-alias -p tsconfig.json"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "brisk": "file:../Brisk",
+    "brisk": "file:../brisk",
+    "module-alias": "^2.2.3",
     "mongoose": "^8.7.2"
   },
   "devDependencies": {
+    "@types/module-alias": "^2.0.4",
     "@types/node": "^22.7.8",
+    "tsc-alias": "^1.8.14",
+    "tsconfig-paths": "^4.2.0",
     "typescript": "^5.6.3"
   }
 }

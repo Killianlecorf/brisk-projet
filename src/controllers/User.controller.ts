@@ -1,5 +1,5 @@
-import { Request, Response } from '@brisk/brisk'; 
-import { User } from "@models/user.model";
+import { Request, Response } from 'brisk'; 
+import { User } from "@/models/user.model";
 
 export const getAllUser = async (req: Request, res: Response) => {
     try {
