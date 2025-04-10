@@ -11,10 +11,10 @@ const brisk = new Brisk();
 
 const userRoutes = new Router();
 
-brisk.get('/', getAllUser );
+brisk.get('/users', getAllUser );
 brisk.get('/:id', getUserById);
 brisk.post('/', addUser);
-brisk.delete('/:id', editUser);
-brisk.put('/:id', removeUser);
+brisk.delete('/:id', removeUser);
+brisk.put('/:id', editUser);
 
 export default userRoutes;

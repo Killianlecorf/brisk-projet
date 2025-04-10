@@ -12,15 +12,15 @@ export const getAllUser = async (req: Request, res: Response) => {
 };
 
 export const addUser = async (req: Request, res: Response) => {
-    const { name, email } = req.body;
+    const { username, email } = req.body;
 
-    if (!name || !email) {
+    if (!username || !email) {
         return res.status(400).json({ error: 'Name and email are required' });
     }
 
     const newUser = new User({
-        username: name,
-        email: email,
+        username,
+        email,
     });
 
     try {
