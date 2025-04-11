@@ -1,4 +1,4 @@
-import { Brisk, Router } from 'brisk'; 
+import { Router } from 'brisk'; 
 import {
     getAllUser, 
     getUserById, 
