@@ -1,6 +1,6 @@
 import { Brisk, bodyParser, cors} from 'brisk'; 
 import { connectToDatabase } from "@/database/db";
-import "@/Routes/User.Routes";
+import userRoutes from "@/Routes/User.Routes";
 import "./configs/aliases";
 
 const brisk = new Brisk();
@@ -8,7 +8,7 @@ const brisk = new Brisk();
 brisk.use(bodyParser);
 brisk.use(cors);
 
-// brisk.registerRouter('/users', userRoutes)
+brisk.registerRouter('/users', userRoutes)
 
 connectToDatabase().then(() => {
     const PORT = 5253;

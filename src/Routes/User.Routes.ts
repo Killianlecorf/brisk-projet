@@ -7,14 +7,12 @@ import {
     removeUser
 } from "@/controllers/User.controller";
 
-const brisk = new Brisk();
-
 const userRoutes = new Router();
 
-brisk.get('/users', getAllUser );
-brisk.get('/:id', getUserById);
-brisk.post('/', addUser);
-brisk.delete('/:id', removeUser);
-brisk.put('/:id', editUser);
+userRoutes.get('/', getAllUser );
+userRoutes.get('/:id', getUserById);
+userRoutes.post('/', addUser);
+userRoutes.delete('/:id', removeUser);
+userRoutes.put('/:id', editUser);
 
 export default userRoutes;
