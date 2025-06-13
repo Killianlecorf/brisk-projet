@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  node-api:
+    container_name: node_api
+    build: .
+    ports:
+      - '5253:5253'
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+    command: npm run dev
